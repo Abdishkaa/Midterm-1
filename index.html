@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Guide App</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="search-container">
+            <input type="text" placeholder="Enter movie name here..." id="movie-name" oninput="autoSuggest()" />
+            <button id="search-btn">Search</button>
+        </div>
+        <div id="suggestions" class="suggestions"></div>
+    </div>
+    
+    <div class="sort-container">
+        <select id="sort-options" onchange="fetchMovies(this.value)">
+            <option value="popularity.desc">Most Popular</option>
+            <option value="release_date.desc">Latest Releases</option>
+            <option value="vote_average.desc">Top Rated</option>
+        </select>
+    </div>
+    <div id="movie-grid" class="movie-list"></div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

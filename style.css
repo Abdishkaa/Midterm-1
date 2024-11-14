@@ -1,0 +1,149 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #ad880f;
+  color: #ffffff;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  width: 90vw;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.search-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-container input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #a0a0a0;
+  background: #333;
+  color: #fff;
+}
+
+.search-container input::placeholder {
+  color: #aaa;
+}
+
+.search-container button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #ffb92a;
+  color: #201f28;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background: #e0a21a;
+}
+
+.suggestions {
+  background: #333;
+  color: #fff;
+  max-height: 150px;
+  overflow-y: auto;
+  position: absolute;
+  width: calc(100% - 20px);
+  z-index: 10;
+  border-radius: 5px;
+}
+
+.suggestions div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestions div:hover {
+  background: #444;
+}
+
+/* Grid Layout for Movie Items */
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.movie-item {
+  background-color: #201f28;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+}
+
+.movie-item:hover {
+  transform: scale(1.05);
+}
+
+.movie-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.movie-info {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.movie-info h2 {
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.rating {
+  margin: 10px 0;
+  color: #ffb92a;
+}
+
+.details {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  color: #aaa;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #201f28;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  color: #fff;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ffb92a;
+}
